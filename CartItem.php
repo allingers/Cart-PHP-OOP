@@ -1,41 +1,34 @@
 <?php
 
-
 class CartItem
 {
     private $product;
     private int $quantity;
 
-    // TODO Skriv en konstruktor som sätter alla properties
     public function __construct($product, $quantity)
     {
         $this->product = $product;
-        $this->quantity = $quantity
+        $this->quantity = $quantity;
     }
 
-    // TODO Skriv getters för alla properties
-    public function getQuantity() 
+    public function getQuantity()
     {
         return $this->quantity;
     }
 
-    public function getProduct() 
+    public function getProduct()
     {
         return $this->product;
     }
 
-
-    //VG: Skall utöka antalet på ett cartItem med 1. 
-    //VG: Det skall inte vara möjligt att utöka så att antalet överstiger produktens $inStock.
+    // *** VG ***  
     public function increaseQuantity()
-    //{
-       // $this -> quantity +=1;
-   
-   // } else {
-        //echo "<p>Kan inte lägga till. Slut i lager</p>";
+    {
 
-   
-    
-    
-    //}
+        if ($this->product->getInStock() > $this->quantity) {
+            $this->quantity += 1;
+        } else {
+            echo "<p>Kan ej lägga till produkt. Slut i lager</p>";
+        }
+    }
 }

@@ -34,6 +34,7 @@ echo $cart->getTotalSum() . "<br>"; // Detta skall skriva ut 6100
 //Lägger till 2 till av produkten cartItem2 i kundvagnen
 $cartItem2->increaseQuantity();
 $cartItem2->increaseQuantity();
+
 //Skriver ut antalet produkter i kundvagnen efter utökat antal
 echo "<h3>Antal produkter i kundvagnen efter utökat antal: </h3>";
 echo $cart->getTotalQuantity() . "<br>"; // Detta skall skriva ut 5
@@ -57,26 +58,9 @@ echo $cart->getTotalSum() . "<br>"; // Detta skall skriva ut 4400
 
 echo "<h2>VG:</h2>";
 
-/*Skriver ut alla items i kundvagnen. Bör stå
-
-Titel: M2 SSD
-
-Antal: 3
-
--------------------------
-Titel: Samsung Galaxy S20
-
-Antal: 1
-
--------------------------
-
-*/
-
-//Kommentera in nedan kod om du satsar på VG
 echo "<h3>Namn och kvantitet på alla items i kundvagnen: </h3>";
 
-foreach ($cart->getItems() as $item) 
- {
+foreach ($cart->getItems() as $item) {
     $cartItemName = $item->getProduct()->getTitle();
     $cartItemQuantity = $item->getQuantity();
 
