@@ -9,7 +9,7 @@ class Cart
         return $this->items;
     }
 
-    public function addProduct($product, $quantity)
+   public function addProduct($product, $quantity)
     {
         if (isset($this->items[$product->getId()])) {
             $this->items[$product->getId()]->increaseQuantity();
@@ -28,11 +28,11 @@ class Cart
 
     public function getTotalQuantity()
     {
-        $totalOuntity = 0;
+        $totalQuantity = 0;
         foreach ($this->items as $item) {
-            $totalOuntity += $item->getQuantity();
+            $totalQuantity += $item->getQuantity();
         }
-        return $totalOuntity;
+        return $totalQuantity;
     }
 
     // *** VG ****
@@ -45,3 +45,4 @@ class Cart
         return $totalSum;
     }
 }
+
